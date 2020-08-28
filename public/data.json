@@ -2,11 +2,23 @@
   "apps":[
     {
       "name":"REMapp",
-      "description":"REMapp is a simple decision-making tool for end-of-life spiral-wound reverse osmosis and nanofiltration membranes with the specific size of 40 inches of length and 8 inches of diameter."
+      "shortDescription":"REMapp is a simple decision-making tool for end-of-life spiral-wound reverse osmosis and nanofiltration membranes with the specific size of 40 inches of length and 8 inches of diameter.",
+      "description": "",
+      "project:": "",
+      "toolLink:": "",
+      "codeLink:": "",
+      "references": "",
+      "expert:": ""
     },
     {
       "name":"EdiCitNet Toolbox",
-      "description":"knowledge sharing & networks for Edible City Solutions (ECS)"
+      "shortDescription":"knowledge sharing & networks for Edible City Solutions (ECS)",
+      "description": "",
+      "project:": "",
+      "toolLink:": "",
+      "codeLink:": "",
+      "references": "",
+      "expert:": ""
     }
   ]
 }

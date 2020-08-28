@@ -1,7 +1,8 @@
 <template lang="pug">
   div
-    div(v-for="app in myJson.apps" :key="app.name")
+    div(v-for="app,index in myJson.apps" :key="app.name")
       p {{app.name}}
+      p {{app.shortDescription}}
       p {{app.description}}
       p ---------------
 </template>

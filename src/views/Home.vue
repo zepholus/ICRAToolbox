@@ -1,6 +1,5 @@
 <template lang="pug">
   div.home
-    img(alt="ICRA logo" src="../assets/icra-logo-en.png")
     AppsList(msg="Welcome to Your Vue.js App")
 </template>
 

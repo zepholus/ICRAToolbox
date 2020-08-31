@@ -11,15 +11,13 @@
 
     div.mt-3
       b-card-group(columns)
-        template(v-for="app,index in myJson.apps")
+        template(v-for="app,index in appsInfo")
           b-card(overlay img-src="https://picsum.photos/900/250/?image=3" :title="app.name" :sub-title="app.shortDescription")
             b-card-text {{app.description}}
 
 </template>
 
 <script>
-
-  import json from '../../public/data.json'
   export default {
     name: 'AppsList',
     props: {
@@ -27,9 +25,14 @@
     },
     data(){
       return{
-        myJson: json
+        //myJson: json,
+        appsInfo: []
       }
-    }
+    },
+    mounted: function () {
+      let _this = this;
+      _this.appsInfo = _this.$store.getters.getAppsInfo;
+    },
   }
 </script>
 

@@ -15,12 +15,26 @@
 
 <script>
 
+  import json from '../../public/data.json'
+
   export default {
     name: 'Menus',
     props: {
       msg: String
     },
+    data() {
+      return {
+        myJson: json,
+      };
+    },
+    created: function () {
+      let _this = this;
 
+      let appsList = json['apps'];
+      _this.$store.dispatch('addAppsInfo', {appsList});
+      console.log("Apps list information saved: ", appsList);
+
+    },
   }
 </script>
 

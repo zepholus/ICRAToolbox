@@ -14,6 +14,7 @@
         template(v-for="app,index in appsInfo")
           b-card(overlay img-src="https://picsum.photos/900/250/?image=3" :title="app.name" :sub-title="app.shortDescription")
             b-card-text {{app.description}}
+            a(type="button" @click="moreInfo(app.name)") More info
 
 </template>
 
@@ -33,6 +34,12 @@
       let _this = this;
       _this.appsInfo = _this.$store.getters.getAppsInfo;
     },
+    methods: {
+      moreInfo: function (name) {
+        let appName = name.replace(/\s/g, "-"); //replace whitespaces with '-'
+        this.$router.push('/' + appName);
+      }
+    }
   }
 </script>
 

@@ -9,8 +9,8 @@
             span(style="color: var(--green-primary); font-weight: var(--bold-text); font-size: 14px") AQUÍ ANIRAN ELS FILTRES
 
 
-    b-jumbotron
-      b-card-group(deck)
+    div.mt-3
+      b-card-group(columns)
         template(v-for="app,index in myJson.apps")
           b-card(overlay img-src="https://picsum.photos/900/250/?image=3" :title="app.name" :sub-title="app.shortDescription")
             b-card-text {{app.description}}

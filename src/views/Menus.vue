@@ -7,15 +7,24 @@
             b-container(fluid)#menuHeader
               img(alt="ICRA logo" src="../assets/icra-logo-en.png").img-fluid
             b-container(fluid)#menuBlock1
-              p Aqui amiran enllaços a totes les apps
+              p Aqui aniran enllaços a totes les apps
       b-col()
         router-view
 
 </template>
 
 <script>
+
   export default {
-    name: "Menus"
+    name: 'Menus',
+    props: {
+      msg: String
+    },
+    data(){
+      return{
+        myJson: json
+      }
+    }
   }
 </script>
 

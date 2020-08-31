@@ -1,6 +1,6 @@
 <template lang="pug">
   div.home
-    AppsList(msg="Welcome to Your Vue.js App")
+    AppsList
 </template>
 
 <script>

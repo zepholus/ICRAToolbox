@@ -5,12 +5,11 @@
     b-jumbotron(header="" style="background-color: #c9ccd1")
       div#filters
         b-row.greenTitles.px-3(align-v="center")
-          b-col(sm="12" lg="8" xl="10").text-left.px-3.pb-2
-            span(style="color: var(--green-primary); font-weight: var(--bold-text); font-size: 14px") AQUÍ ANIRAN ELS FILTRES
+          b-col(sm="3" lg="3" xl="3").text-left.px-3.pb-2
+            b-input(type="text" v-model="search" placeholder="search apps")
 
     br
 
-    b-input(type="text" v-model="search" placeholder="search apps")
 
 
     div.mt-3
@@ -35,9 +34,6 @@
 <script>
   export default {
     name: 'AppsList',
-    props: {
-      msg: String
-    },
     data(){
       return{
         appsInfo: [],

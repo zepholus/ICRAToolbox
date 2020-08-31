@@ -7,7 +7,10 @@
             b-container(fluid)#menuHeader
               img(alt="ICRA logo" src="../assets/icra-logo-en.png").img-fluid
             b-container(fluid)#menuBlock1
-              p Aqui aniran enllaços a totes les apps
+              ul.list-unstyled.components()
+                template(v-for="app in myJson.apps")
+                  li {{app.name}}
+
       b-col()
         router-view
 
@@ -19,9 +22,7 @@
 
   export default {
     name: 'Menus',
-    props: {
-      msg: String
-    },
+
     data() {
       return {
         myJson: json,

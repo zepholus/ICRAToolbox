@@ -4,12 +4,13 @@
       b-col(cols="4" md="3" xl="2"  style="min-height: 100vh; position:sticky; top:0;")
         b-navbar(toggleable='lg')
           .sidebar-header
-            b-container(fluid)#menuHeader
+            b-container(fluid @click="home")#menuHeader
               img(alt="ICRA logo" src="../assets/icra-logo-en.png").img-fluid
             b-container(fluid)#menuBlock1
               ul.list-unstyled.components()
                 template(v-for="app in myJson.apps")
-                  li {{app.name}}
+                  li
+                    a(type="button" @click="moreInfo(app.name)") {{app.name}}
 
       b-col()
         router-view
@@ -36,6 +37,17 @@
       console.log("Apps list information saved: ", appsList);
 
     },
+    methods: {
+      moreInfo: function (name) {
+        let appName = name.replace(/\s/g, "-"); //replace whitespaces with '-'
+        this.$router.push('/' + appName);
+      },
+      home: function () {
+        const path = '/';
+        if(this.$route.path !== path)
+          this.$router.push('/');
+      }
+    }
   }
 </script>
 

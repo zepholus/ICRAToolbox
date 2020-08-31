@@ -20,11 +20,7 @@
     props: {
       msg: String
     },
-    data(){
-      return{
-        myJson: json
-      }
-    }
+
   }
 </script>
 

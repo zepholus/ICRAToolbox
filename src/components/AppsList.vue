@@ -49,10 +49,10 @@
   a {
     color: #42b983;
   }
-   p.barText {
-     color: var(--green-primary);
-     font-size: small;
-   }
+  p.barText {
+    color: var(--green-primary);
+    font-size: small;
+  }
 
   .jumbotron {
     background-color: white;

@@ -5,7 +5,7 @@ import Menus from '../views/Menus.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     component: Menus,

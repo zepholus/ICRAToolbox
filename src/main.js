@@ -17,6 +17,15 @@ Vue.use(IconsPlugin);
 
 Vue.config.productionTip = false;
 
+//filters
+Vue.filter("snippet", function(value){
+  if (value.length < 200) {
+    return value
+  }else {
+    return value.slice(0,200) + "...";
+  }
+});
+
 new Vue({
   router,
   store,

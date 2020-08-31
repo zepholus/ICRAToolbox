@@ -8,12 +8,26 @@
           b-col(sm="12" lg="8" xl="10").text-left.px-3.pb-2
             span(style="color: var(--green-primary); font-weight: var(--bold-text); font-size: 14px") AQUÍ ANIRAN ELS FILTRES
 
+    br
+
+    b-input(type="text" v-model="search" placeholder="search apps")
+
 
     div.mt-3
       b-card-group(columns)
-        template(v-for="app,index in myJson.apps")
-          b-card(overlay img-src="https://picsum.photos/900/250/?image=3" :title="app.name" :sub-title="app.shortDescription")
-            b-card-text {{app.description}}
+        div(v-for="app,index in filteredApps")
+          b-card(no-body style="max-width: 540px;").overflow-hidden
+            b-row(no-gutters)
+              b-col(md="6")
+                b-card-img(src="https://picsum.photos/400/400/?image=20" alt="Image").rounded-0
+              b-col(md="6")
+                b-card-body(:title="app.name")
+                  b-card-text
+                    p {{app.shortDescription | snippet}}
+
+
+
+
 
 </template>
 
@@ -27,7 +41,21 @@
     },
     data(){
       return{
-        myJson: json
+        apps: json.apps,
+        search: "",
+
+      }
+    },
+    computed: {
+      filteredApps: function(){
+
+        let lowerSearch = this.search.toLowerCase()
+
+        return this.apps.filter((app) => {
+          let nameLower = app.name.toLowerCase()
+          let descriptionLower = app.shortDescription.toLowerCase()
+          return nameLower.match(lowerSearch) || descriptionLower.match(lowerSearch)
+        });
       }
     }
   }

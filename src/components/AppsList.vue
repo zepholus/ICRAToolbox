@@ -29,11 +29,10 @@
 
 
 
+
 </template>
 
 <script>
-
-  import json from '../../public/data.json'
   export default {
     name: 'AppsList',
     props: {
@@ -41,7 +40,7 @@
     },
     data(){
       return{
-        apps: json.apps,
+        appsInfo: [],
         search: "",
 
       }
@@ -51,13 +50,17 @@
 
         let lowerSearch = this.search.toLowerCase()
 
-        return this.apps.filter((app) => {
+        return this.appsInfo.filter((app) => {
           let nameLower = app.name.toLowerCase()
           let descriptionLower = app.shortDescription.toLowerCase()
           return nameLower.match(lowerSearch) || descriptionLower.match(lowerSearch)
         });
       }
-    }
+    },
+    mounted: function () {
+      let _this = this;
+      _this.appsInfo = _this.$store.getters.getAppsInfo;
+    },
   }
 </script>
 

@@ -8,7 +8,8 @@
       "toolLink:": "",
       "codeLink:": "",
       "references": "",
-      "expert:": ""
+      "expert:": "",
+      "imageName": ""
     },
     {
       "name":"EdiCitNet Toolbox",
@@ -18,57 +19,8 @@
       "toolLink:": "",
       "codeLink:": "",
       "references": "",
-      "expert:": ""
-    },
-    {
-      "name":"EdiCitNet Toolbox",
-      "shortDescription":"knowledge sharing & networks for Edible City Solutions (ECS)",
-      "description": "",
-      "project:": "",
-      "toolLink:": "",
-      "codeLink:": "",
-      "references": "",
-      "expert:": ""
-    },
-    {
-      "name":"EdiCitNet Toolbox",
-      "shortDescription":"knowledge sharing & networks for Edible City Solutions (ECS)",
-      "description": "",
-      "project:": "",
-      "toolLink:": "",
-      "codeLink:": "",
-      "references": "",
-      "expert:": ""
-    },
-    {
-      "name":"EdiCitNet Toolbox",
-      "shortDescription":"knowledge sharing & networks for Edible City Solutions (ECS)",
-      "description": "",
-      "project:": "",
-      "toolLink:": "",
-      "codeLink:": "",
-      "references": "",
-      "expert:": ""
-    },
-    {
-      "name":"EdiCitNet Toolbox",
-      "shortDescription":"knowledge sharing & networks for Edible City Solutions (ECS)",
-      "description": "",
-      "project:": "",
-      "toolLink:": "",
-      "codeLink:": "",
-      "references": "",
-      "expert:": ""
-    },
-    {
-      "name":"EdiCitNet Toolbox",
-      "shortDescription":"knowledge sharing & networks for Edible City Solutions (ECS)",
-      "description": "",
-      "project:": "",
-      "toolLink:": "",
-      "codeLink:": "",
-      "references": "",
-      "expert:": ""
+      "expert:": "",
+      "imageName": ""
     }
 
   ]

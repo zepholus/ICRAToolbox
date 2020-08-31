@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Menus from '../views/Menus.vue'
+import AppInfo from "../components/AppInfo";
 
 Vue.use(VueRouter)
 
@@ -13,7 +14,13 @@ const routes = [
       {
         path: '',
         component: Home
-      }
+      },
+      {
+        path: ':appName',
+        name: 'app',
+        props: true,
+        component: AppInfo
+      },
     ]
   },
   {

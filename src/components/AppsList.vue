@@ -1,7 +1,6 @@
 <template lang="pug">
   div
 
-
     b-jumbotron(header="" style="background-color: #c9ccd1")
       div#filters
         b-row.greenTitles.px-3(align-v="center")
@@ -9,8 +8,6 @@
             b-input(type="text" v-model="search" placeholder="search apps")
 
     br
-
-
 
     div.mt-3
       b-card-group(columns)
@@ -23,11 +20,7 @@
                 b-card-body(:title="app.name")
                   b-card-text
                     p {{app.shortDescription | snippet}}
-
-
-
-
-
+                    a(type="button" @click="moreInfo(app.name)") More info
 
 </template>
 
@@ -57,6 +50,12 @@
       let _this = this;
       _this.appsInfo = _this.$store.getters.getAppsInfo;
     },
+    methods: {
+      moreInfo: function (name) {
+        let appName = name.replace(/\s/g, "-"); //replace whitespaces with '-'
+        this.$router.push('/' + appName);
+      }
+    }
   }
 </script>
 

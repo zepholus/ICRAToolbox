@@ -14,11 +14,11 @@
 
     div.mt-3
       b-card-group(columns)
-        div(v-for="app,index in filteredApps")
+        div(v-for="app in filteredApps")
           b-card(no-body style="max-width: 540px;").overflow-hidden
             b-row(no-gutters)
               b-col(md="6")
-                b-card-img(src="https://picsum.photos/400/400/?image=20" alt="Image").rounded-0
+                b-card-img(:src="app.imageName" alt="Image").rounded-0
               b-col(md="6")
                 b-card-body(:title="app.name")
                   b-card-text

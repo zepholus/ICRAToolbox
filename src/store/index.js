@@ -20,7 +20,10 @@ export default new Vuex.Store({
   getters: {
     getAppsInfo: state => {
       return state.apps;
-    }
+    },
+    getAppInfoByName: (state) => (appName) => {
+      return state.apps.find(item => item.name == appName);
+    },
   },
   modules: {
   }

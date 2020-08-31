@@ -17,7 +17,7 @@ const routes = [
       },
       {
         path: ':appName',
-        name: 'app',
+        name: 'appInfo',
         props: true,
         component: AppInfo
       },

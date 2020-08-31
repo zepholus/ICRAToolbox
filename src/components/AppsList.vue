@@ -1,27 +1,22 @@
 <template lang="pug">
-  div
-
-    b-jumbotron(header="" style="background-color: #c9ccd1")
-      div#filters
-        b-row.greenTitles.px-3(align-v="center")
-          b-col(sm="3" lg="3" xl="3").text-left.px-3.pb-2
-            b-input(type="text" v-model="search" placeholder="search apps")
-
+  .appsList
+    div#filters
+      b-row.px-3(align-v="center")
+        b-col(sm="3" lg="3" xl="3").text-left.p-3
+          b-input(type="text" v-model="search" placeholder="search apps")
     br
-
-    div.mt-3
+    div
       b-card-group(columns)
         div(v-for="app in filteredApps")
           b-card(no-body style="max-width: 540px;").overflow-hidden
             b-row(no-gutters)
-              b-col(md="6")
+              b-col(md="6").p-3
                 b-card-img(:src="app.imageName" alt="Image").rounded-0
               b-col(md="6")
                 b-card-body(:title="app.name")
                   b-card-text
                     p {{app.shortDescription | snippet}}
-                    a(type="button" @click="moreInfo(app.name)") More info
-
+                    a.link(type="button" @click="moreInfo(app.name)") More info >>
 </template>
 
 <script>
@@ -52,15 +47,41 @@
     },
     methods: {
       moreInfo: function (name) {
-        let appName = name.replace(/\s/g, "-"); //replace whitespaces with '-'
-        this.$router.push('/' + appName);
+        let appName = name.replace(/\s/g, "-"); //replace all whitespaces with '-'
+        this.$router.push({ name: 'appInfo', params: { appName: appName }});
       }
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style scoped>
+
+  .appsList {
+    color: var(--text-main-color);
+    line-height: normal;
+  }
+
+  #filters {
+    background-color: var(--dark-gray);
+  }
+
+  h4.card-title {
+    font-weight: bold;
+  }
+
+  a.link, a.link[type=button] {
+    color: var(--blue-icra);
+    align-self: center;
+  }
+
+  a.link:hover, a.link[type=button]:hover {
+    color: var(--text-main-color);
+    align-self: center;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  /*
   h3 {
     margin: 40px 0 0;
   }
@@ -147,5 +168,5 @@
 
   .custom-control-inline {
     margin-right: 0;
-  }
+  }*/
 </style>

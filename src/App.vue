@@ -7,11 +7,19 @@
 
 
 <style>
-  @import "https://fonts.googleapis.com/css?family=Fira+Sans:400,300,300italic,400italic,500,500italic,700,700italic";
+  @import "http://fonts.googleapis.com/css?family=Lato:400,700";
 
   :root {
-    --font-family-primary: "Fira Sans",Helvetica,Arial,Lucida,sans-serif;
-    --green-primary: #5d8f49;
+    --font-family-primary: 'Lato', sans-serif;
+    --text-main-color: #2F2F2F;
+    --text-nav-color: #5c6a72;
+    --dark-gray: #5a6870;
+    --orange-icra: #ea9e26;
+    --blue-icra: #00b8ef;
+    --bold-text: 600;
+    --text-weight: 400;
+
+    /*--green-primary: #5d8f49;
     --green-oldDesign: #3fcb9a;
     --green-secondary: #c2dcb8;
     --gray-font-color: #706f6f;
@@ -19,18 +27,25 @@
     --dark-red: #c51e23;
     --light-gray-secondary: #f8f9fa;
     --light-gray-primary: #e9ecef;
-    --bold-text: 600;
-    --text-weight: 400;
-    --height-child-comp: calc(100vh - 4rem);
+    --height-child-comp: calc(100vh - 4rem);*/
   }
 
-  div {
+  #app {
+    margin: 15px;
+    font-family: var(--font-family-primary);
+    color: var(--text-nav-color);
+    font-weight: var(--text-weight);
+    font-size: 14px;
+  }
+
+
+  /*div {
     font-family: var(--font-family-primary);
     color: var(--gray-font-color);
     font-weight: var(--text-weight);
   }
 
-  /*---- BANNERS ----*/
+
   .banner {
     position: relative;
   }
@@ -48,12 +63,12 @@
   }
 
 
-  /*---- QUESTION STATEMENT FONT COLOR ----*/
+
   .col-form-label {
     color: var(--questions-font-color);
   }
 
-  /*---- BUTTONS ----*/
+
   .buttonRed.btn-secondary {
     color: #fff;
     background-color: var(--dark-red);
@@ -88,7 +103,7 @@
     font-weight: bold;
     font-size: x-small;
     overflow: hidden
-  }
+  }*/
 
 
 </style>

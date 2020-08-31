@@ -4,13 +4,14 @@
       b-col(cols="4" md="3" xl="2"  style="min-height: 100vh; position:sticky; top:0;")
         b-navbar(toggleable='lg')
           .sidebar-header
-            b-container(fluid @click="home")#menuHeader
+            b-container(fluid @click="home").pb-3
               img(alt="ICRA logo" src="../assets/icra-logo-en.png").img-fluid
-            b-container(fluid)#menuBlock1
+            b-container(fluid)
               ul.list-unstyled.components()
+                li.menuTitle AVAILABLE APPS & TOOLS
                 template(v-for="app in myJson.apps")
-                  li
-                    a(type="button" @click="moreInfo(app.name)") {{app.name}}
+                  li.pl-3
+                    a.link(type="button" @click="moreInfo(app.name)") {{app.name}}
 
       b-col()
         router-view
@@ -40,7 +41,7 @@
     methods: {
       moreInfo: function (name) {
         let appName = name.replace(/\s/g, "-"); //replace whitespaces with '-'
-        this.$router.push('/' + appName);
+        this.$router.push({ name: 'appInfo', params: { appName: appName }});
       },
       home: function () {
         const path = '/';
@@ -52,18 +53,27 @@
 </script>
 
 <<style scoped>
-  a {
-    color: black;
+
+  .sidebar-header {
+    line-height: 1.6;
   }
 
-  a:hover {
-    color: black;
+  li.menuTitle{
+    color: var(--text-main-color);
+    font-weight: bold;
+    margin-bottom: 10px;
   }
 
-  .comingSoon{
-    color: grey;
+  a.link, a.link[type=button] {
+    color: var(--text-nav-color);
   }
 
+  a.link:hover, a.link[type=button]:hover {
+    color: var(--blue-icra);
+    text-decoration: none;
+  }
+
+  /*
   .btn-secondary {
     color: #fff;
     background-color: #e65943;
@@ -73,17 +83,6 @@
 
   .btn-secondary:hover {
     color: #fff;
-  }
-
-  #menuHeader {
-    color: #36cb87;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
-  #menuBlock1 {
-    margin-top: 30px;
-    margin-bottom: 30px;
   }
 
   h3 {
@@ -177,6 +176,6 @@
   .custom-control-inline {
     margin-right: 0;
   }
-
+  */
 
 </style>

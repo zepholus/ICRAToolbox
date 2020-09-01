@@ -3,7 +3,15 @@
     div#filters
       b-row.px-3(align-v="center")
         b-col(sm="3" lg="3" xl="3").text-left.p-3
-          b-input(type="text" v-model="search" placeholder="search apps")
+          b-input(type="text" v-model="search" placeholder="Search apps")
+        b-col(sm="3" lg="3" xl="3").text-left.p-3
+          b-button(v-b-modal.modal-1) Select filters
+
+          b-modal(id="modal-1" title="Filters" hide-header-close)
+            div
+              p Code Type
+              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
+
     br
     div
       b-card-group(columns)
@@ -17,6 +25,9 @@
                   b-card-text
                     p {{app.shortDescription | snippet}}
                     a.link(type="button" @click="moreInfo(app.name)") More info >>
+
+
+
 </template>
 
 <script>
@@ -26,6 +37,15 @@
       return{
         appsInfo: [],
         search: "",
+        codeType: {
+          selected: 'any',
+          options: [
+          { text: '-Any-', value: 'any' },
+          { text: 'Free, no licence', value: 'free' },
+          { text: 'Public/open source', value: 'open'},
+          { text: 'Closed source', value: 'closed'}
+        ]
+      }
 
       }
     },

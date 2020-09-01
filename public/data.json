@@ -5,17 +5,17 @@
     "name":"nom de l'aplicació",
     "shortDescription":"descripció breu o subtítol de l'aplicació (opcional)",
     "description": "descripció detallada de l'aplicació",
-    "project": "projecte en el marc del qual s'ha realitzat l'eina",
+    "project": "projecte en el marc del qual s'ha realitzat l'eina, finançament rebut",
     "publications": [
       {
         "authors": ["autor 1", "autor 2", "..."],
         "title": "títol de la publicació",
-        "link": "enllaç"
+        "link": "enllaç (si n'hi ha)"
       },
       {
         "authors": ["autor 1", "autor 2", "..."],
         "title": "títol de la publicació",
-        "link": "enllaç"
+        "link": "enllaç (si n'hi ha)"
       }
     ],
     "experts": [

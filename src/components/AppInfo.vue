@@ -24,8 +24,8 @@
     computed: {
       getAppTitle: function () {
         let _this = this;
-        let appName = _this.$route.params.appName.replace(/(-)/g," " ); //replace all '-' from url with whitespaces
-        _this.appInfo = _this.$store.getters.getAppInfoByName(appName);
+        //let appName = _this.$route.params.appName.replace(/(-)/g," " ); //replace all '-' from url with whitespaces
+        _this.appInfo = _this.$store.getters.getCurrentApp;
         return _this.appInfo.name;
       }
     }

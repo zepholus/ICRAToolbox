@@ -25,7 +25,7 @@
                   b-card-text
                     p {{app.shortDescription | snippet}}
                     a.link(type="button" @click="moreInfo(app)") More info >>
-  
+
 </template>
 
 <script>
@@ -50,14 +50,20 @@
     computed: {
       filteredApps: function(){
 
-        let lowerSearch = this.search.toLowerCase()
+        let _this = this
+        let lowerSearch = _this.search.toLowerCase()
 
-        return this.appsInfo.filter((app) => {
+        return _this.appsInfo.filter((app) => {
           let nameLower = app.name.toLowerCase()
           let descriptionLower = app.shortDescription.toLowerCase()
-          return nameLower.match(lowerSearch) || descriptionLower.match(lowerSearch)
+
+          let searchBox = nameLower.match(lowerSearch) || descriptionLower.match(lowerSearch)
+          let codeType = (_this.codeType.selected === 'any') || (app.filters.codeType === _this.codeType.selected)
+
+          return searchBox && codeType
+
         });
-      }
+      },
     },
     mounted: function () {
       let _this = this;

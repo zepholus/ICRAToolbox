@@ -59,7 +59,7 @@
       "toolLink": "",
       "codeLink": "",
       "filters":  {
-        "codeType": ""
+        "codeType": "free"
       }
     },
     {
@@ -86,7 +86,7 @@
       "toolLink": "",
       "codeLink": "",
       "filters":  {
-        "codeType": ""
+        "codeType": "open"
       }
     }
   ]

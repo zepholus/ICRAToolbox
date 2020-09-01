@@ -16,7 +16,7 @@
                 b-card-body(:title="app.name")
                   b-card-text
                     p {{app.shortDescription | snippet}}
-                    a.link(type="button" @click="moreInfo(app.name)") More info >>
+                    a.link(type="button" @click="moreInfo(app)") More info >>
 </template>
 
 <script>
@@ -46,9 +46,13 @@
       _this.appsInfo = _this.$store.getters.getAppsInfo;
     },
     methods: {
-      moreInfo: function (name) {
-        let appName = name.replace(/\s/g, "-"); //replace all whitespaces with '-'
-        this.$router.push({ name: 'appInfo', params: { appName: appName }});
+      moreInfo: function (currentApp) {
+        let _this = this;
+        _this.$store.dispatch('setCurrentApp', {currentApp});
+        let appName = currentApp.name.replace(/\s/g, "-"); //replace all whitespaces with '-'
+        const path = '/'+appName;
+        if(this.$route.path !== path)
+          this.$router.push({ name: 'appInfo', params: { appName: appName }});
       }
     }
   }

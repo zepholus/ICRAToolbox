@@ -11,7 +11,7 @@
                 li.menuTitle AVAILABLE APPS & TOOLS
                 template(v-for="app in myJson.apps")
                   li.pl-3
-                    a.link(type="button" @click="moreInfo(app.name)") {{app.name}}
+                    a.link(type="button" @click="moreInfo(app)") {{app.name}}
 
       b-col()
         router-view
@@ -39,9 +39,13 @@
 
     },
     methods: {
-      moreInfo: function (name) {
-        let appName = name.replace(/\s/g, "-"); //replace whitespaces with '-'
-        this.$router.push({ name: 'appInfo', params: { appName: appName }});
+      moreInfo: function (currentApp) {
+        let _this = this;
+        _this.$store.dispatch('setCurrentApp', {currentApp});
+        let appName = currentApp.name.replace(/\s/g, "-"); //replace whitespaces with '-'
+        const path = '/'+appName;
+        if(this.$route.path !== path)
+          this.$router.push({ name: 'appInfo', params: { appName: appName }});
       },
       home: function () {
         const path = '/';

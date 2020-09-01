@@ -11,7 +11,7 @@
           b-card(no-body style="max-width: 540px;").overflow-hidden
             b-row(no-gutters)
               b-col(md="6").p-3
-                b-card-img(:src="app.imageName" alt="Image").rounded-0
+                b-card-img(:src="'./images/'+app.imageName" alt="Image").rounded-0
               b-col(md="6")
                 b-card-body(:title="app.name")
                   b-card-text

@@ -10,7 +10,7 @@
       "codeLink:": "",
       "references": "",
       "expert:": "",
-      "imageName": "./images/remapp.jpg"
+      "imageName": "remapp/remapp.jpg"
     },
     {
       "name":"EdiCitNet Toolbox",
@@ -21,7 +21,7 @@
       "codeLink:": "",
       "references": "",
       "expert:": "",
-      "imageName": "./images/edicitnet.jpg"
+      "imageName": "edicitnet/edicitnet.jpg"
     }
 
   ]

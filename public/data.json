@@ -1,28 +1,93 @@
 
 {
+  "_instructions":
+  {
+    "name":"nom de l'aplicació",
+    "shortDescription":"descripció breu o subtítol de l'aplicació (opcional)",
+    "description": "descripció detallada de l'aplicació",
+    "project": "projecte en el marc del qual s'ha realitzat l'eina",
+    "publications": [
+      {
+        "authors": ["autor 1", "autor 2", "..."],
+        "title": "títol de la publicació",
+        "link": "enllaç"
+      },
+      {
+        "authors": ["autor 1", "autor 2", "..."],
+        "title": "títol de la publicació",
+        "link": "enllaç"
+      }
+    ],
+    "experts": [
+      {
+        "name": "",
+        "position": "",
+        "email": ""
+      }
+    ],
+    "imageName": "nomApp/foto",
+    "otherImages": ["nomApp/foto1","..."],
+    "toolLink": "enllaç per utilitzar/descarregar l'eina",
+    "codeLink": "enllaç al repositori",
+    "filters":  {
+      "codeType": "triar entre 'free', 'open', o 'closed'",
+      "altres filtres": "diferents opcions"
+    }
+  },
   "apps":[
     {
       "name":"REMapp",
-      "shortDescription":"REMapp is a simple decision-making tool for end-of-life spiral-wound reverse osmosis and nanofiltration membranes with the specific size of 40 inches of length and 8 inches of diameter.",
+      "shortDescription":"REMapp is a simple decision-making tool for end-of-life spiral-wound reverse osmosis and nanofiltration membranes with the specific size of 40 inches of length and 8 inches of diameter",
       "description": "",
-      "project:": "",
-      "toolLink:": "",
-      "codeLink:": "",
-      "references": "",
-      "expert:": "",
-      "imageName": "remapp/remapp.jpg"
+      "project": "",
+      "publications": [
+        {
+          "authors": [],
+          "title": "",
+          "link": ""
+        }
+      ],
+      "experts": [
+        {
+          "name": "",
+          "position": "",
+          "email": ""
+        }
+      ],
+      "imageName": "remapp/remapp.jpg",
+      "otherImages": [],
+      "toolLink": "",
+      "codeLink": "",
+      "filters":  {
+        "codeType": ""
+      }
     },
     {
       "name":"EdiCitNet Toolbox",
       "shortDescription":"knowledge sharing & networks for Edible City Solutions (ECS)",
       "description": "",
-      "project:": "",
-      "toolLink:": "",
-      "codeLink:": "",
-      "references": "",
-      "expert:": "",
-      "imageName": "edicitnet/edicitnet.jpg"
+      "project": "",
+      "publications": [
+        {
+          "authors": [],
+          "title": "",
+          "link": ""
+        }
+      ],
+      "experts": [
+        {
+          "name": "",
+          "position": "",
+          "email": ""
+        }
+      ],
+      "imageName": "edicitnet/edicitnet.jpg",
+      "otherImages": [],
+      "toolLink": "",
+      "codeLink": "",
+      "filters":  {
+        "codeType": ""
+      }
     }
-
   ]
 }

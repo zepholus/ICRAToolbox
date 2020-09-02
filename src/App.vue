@@ -32,7 +32,7 @@
   }
 
   #app {
-    max-width: 1150px;
+    max-width: 1200px;
     overflow: hidden;
     margin: 15px auto 15px auto;
     font-family: var(--font-family-primary);

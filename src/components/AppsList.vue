@@ -28,27 +28,27 @@
               b-collapse(id="filter2" role="tabpanel")
                 b-form-radio-group(v-model="codeType.selected", :options="codeType.options" stacked).m-2
 
-
-
     br
-    div
-      b-card-group(columns)
-        div(v-for="app in filteredApps")
-          b-card(no-body style="max-width: 540px; max-height: max-content").overflow-hidden
-            b-row(no-gutters)
-              b-col(md="6").p-3.align-content-center
-                b-img(fluid center :src="'./images/'+app.imageName" alt="Image" style="max-height: fit-content;").rounded-0
-              b-col(md="6")
-                b-card-body(:title="app.name")
-                  b-card-text
-                    p {{app.shortDescription | snippet}}
-                    a.link(type="button" @click="moreInfo(app)") More info >>
+    div.my-grid
+      b-card-group(v-for="app in filteredApps" :key="app.name" ).p-2
+        b-card(no-body style=" min-height: fit-content").overflow-hidden
+          b-row(no-gutters)
+            b-col(md="6").p-3.align-content-center
+              b-img(fluid center :src="'./images/'+app.imageName" alt="Image" style="max-height: fit-content;").rounded-0
+            b-col(md="6")
+              b-card-body(:title="app.name")
+                b-card-text
+                  p {{app.shortDescription | snippet}}
+                  a.link(type="button" @click="moreInfo(app)") More info >>
 
 </template>
 
 <script>
+  import Header from "./Header";
+
   export default {
     name: 'AppsList',
+    components: {Header},
     data(){
       return{
         appsInfo: [],
@@ -103,6 +103,22 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+  .my-grid {
+    display: grid;
+    justify-items: center;
+    /* 280px is the minimum a column can get, you might need to adjust it based on your needs. */
+    grid-template-columns: 50% 50%;
+    /*grid-gap: 1.5rem;*/
+  }
+
+  .my-grid > * {
+    width: 100%;
+  }
+
+  .card-title {
+    font-weight: bold;
+  }
+
   .appsList {
     color: var(--text-main-color);
     line-height: normal;
@@ -119,7 +135,9 @@
 
   a.link, a.link[type=button] {
     color: var(--blue-icra);
-    align-self: center;
+    align-self: end;
+    float: right;
+    padding-bottom: 1rem;
   }
 
   a.link:hover, a.link[type=button]:hover {

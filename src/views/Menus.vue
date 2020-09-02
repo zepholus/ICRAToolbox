@@ -1,19 +1,23 @@
 <template lang="pug">
   b-container(fluid).p-0
     b-row(no-gutters)
-      b-col(cols="4" md="3" xl="3"  style="min-height: 100vh; position:sticky; top:0;")
-        b-navbar(toggleable='lg')
+      b-col(cols="3" md="3" xl="3"  style="min-height: 100vh; position:sticky; top:0;").py-3
+        b-navbar(toggleable='lg').p-0
           .sidebar-header
-            b-container(fluid @click="home").pb-3
-              img(alt="ICRA logo" src="../assets/icra-logo-en.png").img-fluid
+            b-container(fluid title="back to ICRA homepage" style="width: 70%").pb-3.px-0.float-left
+              a(href="http://icra.cat/index.php?lang=3")
+                img(alt="ICRA logo" src="../assets/icra-logo-en.png").img-fluid
             b-container(fluid)
               ul.list-unstyled.components()
+                li.menuTitle
+                  a(type="button" @click="home") HOME
                 li.menuTitle AVAILABLE APPS & TOOLS
                 template(v-for="app in myJson.apps")
                   li.pl-3
-                    a.link(type="button" @click="moreInfo(app)" :id="app.name") {{app.name}}
+                    a.link(type="button" @click="moreInfo(app)" :id="app.name" :class="getClass(app.name)") {{app.name}}
 
-      b-col()
+      b-col().py-3
+        Header
         router-view
 
 </template>
@@ -21,10 +25,11 @@
 <script>
 
   import json from '../../public/data.json'
+  import Header from "../components/Header";
 
   export default {
     name: 'Menus',
-
+    components: {Header},
     data() {
       return {
         myJson: json,
@@ -50,6 +55,18 @@
         const path = '/';
         if(this.$route.path !== path)
           this.$router.push('/');
+      },
+      getClass: function (name) {
+        let _this = this;
+        let className ="";
+        let appName = _this.$store.getters.getCurrentApp['name'];
+        if(this.$route.path !== '/')
+          if(appName === name)
+            className = "active"
+        return className;
+      },
+      computed: {
+
       }
     }
   }
@@ -74,6 +91,11 @@
   a.link:hover, a.link[type=button]:hover {
     color: var(--blue-icra);
     text-decoration: none;
+  }
+
+  a.link.active, a.link.active[type=button] {
+    color: var(--blue-icra);
+    font-weight: bold;
   }
 
   /*

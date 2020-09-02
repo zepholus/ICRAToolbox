@@ -11,7 +11,7 @@
                 li.menuTitle AVAILABLE APPS & TOOLS
                 template(v-for="app in myJson.apps")
                   li.pl-3
-                    a.link(type="button" @click="moreInfo(app)") {{app.name}}
+                    a.link(type="button" @click="moreInfo(app)" :id="app.name") {{app.name}}
 
       b-col()
         router-view

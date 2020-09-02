@@ -7,11 +7,35 @@
         b-col(sm="3" lg="3" xl="3").text-left.p-3
           b-button(v-b-modal.modal-1) Select filters
 
-          b-modal(id="modal-1" title="Filters" hide-header-close)
+          b-modal(id="modal-1" title="Filters" scrollable hide-header-close)
             div
-              p Code Type
+              p.filter Code Type
               b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
-
+            br
+            div
+              p.filter Code Type
+              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
+            br
+            div
+              p.filter Code Type
+              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
+            br
+            div
+              p.filter Code Type
+              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
+            br
+            div
+              p.filter Code Type
+              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
+            br
+            div
+              p.filter Code Type
+              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
+            br
+            div
+              p.filter Code Type
+              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
+            br
     br
     div
       b-card-group(columns)
@@ -107,6 +131,9 @@
     color: var(--orange-icra);
     align-self: center;
     text-decoration: none;
+    font-weight: bold;
+  }
+  p.filter {
     font-weight: bold;
   }
 

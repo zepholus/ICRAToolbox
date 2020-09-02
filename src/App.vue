@@ -16,6 +16,7 @@
     --dark-gray: #5a6870;
     --orange-icra: #ea9e26;
     --blue-icra: #00b8ef;
+    --blue-icra-hovered: #008fba;
     --bold-text: 600;
     --text-weight: 400;
 

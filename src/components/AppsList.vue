@@ -2,40 +2,34 @@
   .appsList
     div#filters
       b-row.px-3(align-v="center")
-        b-col(sm="3" lg="3" xl="3").text-left.p-3
+        b-col(sm="4" lg="4" xl="4").text-left.p-3
           b-input(type="text" v-model="search" placeholder="Search apps")
-        b-col(sm="3" lg="3" xl="3").text-left.p-3
-          b-button(v-b-modal.modal-1) Select filters
+        b-col(sm="8" lg="8" xl="8").text-rightp-3
+          b-button(v-b-toggle.filters).float-right.buttonFilter Show filters
 
-          b-modal(id="modal-1" title="Filters" scrollable hide-header-close)
-            div
-              p.filter Code Type
-              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
-            br
-            div
-              p.filter Code Type
-              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
-            br
-            div
-              p.filter Code Type
-              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
-            br
-            div
-              p.filter Code Type
-              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
-            br
-            div
-              p.filter Code Type
-              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
-            br
-            div
-              p.filter Code Type
-              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
-            br
-            div
-              p.filter Code Type
-              b-form-radio-group(v-model="codeType.selected", :options="codeType.options")
-            br
+          b-sidebar(id="filters" title="Filters" right shadow)
+            div(role="tablist").px-4.py-4
+
+              b-row(v-b-toggle.filter1)
+                b-col(cols="10")
+                  p.sideBar CODE TYPE
+                b-col(cols="2")
+                  b-icon(icon="chevron-up" size="sm")
+
+              b-collapse(id="filter1" role="tabpanel")
+                b-form-radio-group(v-model="codeType.selected", :options="codeType.options" stacked).m-3
+
+              b-row(v-b-toggle.filter2)
+                b-col(cols="10")
+                  p.sideBar CODE TYPE 2
+                b-col(cols="2")
+                  b-icon(icon="chevron-up" size="sm")
+
+              b-collapse(id="filter2" role="tabpanel")
+                b-form-radio-group(v-model="codeType.selected", :options="codeType.options" stacked).m-2
+
+
+
     br
     div
       b-card-group(columns)
@@ -118,9 +112,10 @@
     background-color: var(--dark-gray);
   }
 
-  h4.card-title {
+  p.sideBar {
     font-weight: bold;
   }
+
 
   a.link, a.link[type=button] {
     color: var(--blue-icra);
@@ -133,100 +128,26 @@
     text-decoration: none;
     font-weight: bold;
   }
-  p.filter {
-    font-weight: bold;
-  }
-
-  .card-columns {
-    -moz-column-count: 2;
-    column-count: 2;
-  }
-  /*
-  h3 {
-    margin: 40px 0 0;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  a {
-    color: #42b983;
-  }
-  p.barText {
-    color: var(--green-primary);
-    font-size: small;
-  }
-
-  .jumbotron {
-    background-color: white;
-    border-radius: 0rem;
-    padding: 0rem;
-    margin: 0;
-  }
-
-  #map {
-    height: 60vh;
-    width: 100%;
-  }
-
-  .greenTitles {
-    color: var(--green-primary);
-    text-align: center;
-    font-size: small;
-  }
-
-  .checkBox {
-    text-align: left;
-    color: var(--green-primary);
-    font-size: small;
-  }
-
-  .form-control {
-    border: var(--green-primary) 1px solid;
-    border-radius: 25px;
-    font-size: small;
-  }
-
-  .b-icon.bi.collapsed {
+  div.row.collapsed .b-icon.bi {
     transform: rotate(180deg);
   }
 
-  .advancedSearchOptions {
-    background-color: var(--light-gray-secondary);
+  .buttonFilter {
+    color: #fff;
+    background-color: var(--blue-icra);
+    border-color: var(--blue-icra);
+    font-weight: var(--bold-text);
     font-size: small;
-    margin: 0;
+    overflow: hidden;
+    min-width: fit-content;
   }
 
-  .optionsBut {
-    color: var(--light-gray-primary);
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 2rem;
-    align-self: baseline;
-    margin: 0.75rem;
-    padding: 0 0.1em 0 0.1em;
+  .buttonFilter:hover {
+    background-color: var(--blue-icra-hovered);
   }
 
-  .optionsBut:hover {
-    color: #6c757d;
-    background-color: #ffffff;
-    border-color: var(--dark-red);
+  .buttonFilter:checked {
+    background-color: var(--orange-icra);
   }
 
-  .optionsBut > div {
-    margin: 0.55rem;
-  }
-
-  .optionsBut p {
-    padding: 0rem;
-    margin: 0rem;
-  }
-
-  .custom-control-inline {
-    margin-right: 0;
-  }*/
 </style>

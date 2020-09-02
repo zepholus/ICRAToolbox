@@ -31,7 +31,9 @@
   }
 
   #app {
-    margin: 15px;
+    max-width: 1150px;
+    overflow: hidden;
+    margin: 15px auto 15px auto;
     font-family: var(--font-family-primary);
     color: var(--text-nav-color);
     font-weight: var(--text-weight);

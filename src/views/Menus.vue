@@ -1,7 +1,7 @@
 <template lang="pug">
   b-container(fluid).p-0
     b-row(no-gutters)
-      b-col(cols="4" md="3" xl="2"  style="min-height: 100vh; position:sticky; top:0;")
+      b-col(cols="4" md="3" xl="3"  style="min-height: 100vh; position:sticky; top:0;")
         b-navbar(toggleable='lg')
           .sidebar-header
             b-container(fluid @click="home").pb-3
@@ -32,7 +32,6 @@
     },
     created: function () {
       let _this = this;
-
       let appsList = json['apps'];
       _this.$store.dispatch('addAppsInfo', {appsList});
       console.log("Apps list information saved: ", appsList);

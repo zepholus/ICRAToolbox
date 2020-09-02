@@ -16,10 +16,10 @@
     div
       b-card-group(columns)
         div(v-for="app in filteredApps")
-          b-card(no-body style="max-width: 540px;").overflow-hidden
+          b-card(no-body style="max-width: 540px; max-height: max-content").overflow-hidden
             b-row(no-gutters)
-              b-col(md="6").p-3
-                b-card-img(:src="'./images/'+app.imageName" alt="Image").rounded-0
+              b-col(md="6").p-3.align-content-center
+                b-img(fluid center :src="'./images/'+app.imageName" alt="Image" style="max-height: fit-content;").rounded-0
               b-col(md="6")
                 b-card-body(:title="app.name")
                   b-card-text
@@ -104,10 +104,15 @@
   }
 
   a.link:hover, a.link[type=button]:hover {
-    color: var(--text-main-color);
+    color: var(--orange-icra);
     align-self: center;
     text-decoration: none;
     font-weight: bold;
+  }
+
+  .card-columns {
+    -moz-column-count: 2;
+    column-count: 2;
   }
   /*
   h3 {

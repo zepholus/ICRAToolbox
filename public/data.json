@@ -69,10 +69,10 @@
       "toolLink": "http://remapp.icra.cat/",
       "codeLink": "https://github.com/icra/remapp",
       "filters":  {
-        "codeType": ["free", "open"],
+        "code type": [],
         "functionality": [],
         "topic": [],
-        "urbanWaterCycle": []
+        "urban water cycle": []
       }
     },
     {
@@ -109,10 +109,10 @@
       "toolLink": "http://remapp.icra.cat/",
       "codeLink": "https://github.com/icra/remapp",
       "filters":  {
-        "codeType": ["free"],
+        "code type": [],
         "functionality": [],
         "topic": [],
-        "urbanWaterCycle": []
+        "urban water cycle": []
       }
     }
 

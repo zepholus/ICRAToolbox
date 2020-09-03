@@ -8,43 +8,17 @@
           b-button(v-b-toggle.filters).float-right.buttonFilter Show filters
 
           b-sidebar(id="filters" title="Filters" right shadow)
-            div(role="tablist").px-4.py-4
-
-              b-row(v-b-toggle.filter1)
+            div(v-for="filter in filters" role="tablist").px-4
+              b-row(v-b-toggle="filter.key").py-2
                 b-col(cols="10")
-                  p.sideBar CODE TYPE
+                  p.sideBar {{filter.name.toUpperCase()}}
                 b-col(cols="2")
                   b-icon(icon="chevron-up" size="sm")
 
-              b-collapse(id="filter1" role="tabpanel")
-                b-form-checkbox-group(v-model="codeType.selected", :options="codeType.options" stacked).m-3
+              b-collapse(:id="filter.key" role="tabpanel")
+                b-form-checkbox-group(v-model="filter.selected", :options="filter.options" stacked).m-2.mb-3
 
-              b-row(v-b-toggle.filter2)
-                b-col(cols="10")
-                  p.sideBar FUNCTIONALITY
-                b-col(cols="2")
-                  b-icon(icon="chevron-up" size="sm")
 
-              b-collapse(id="filter2" role="tabpanel")
-                b-form-checkbox-group(v-model="functionality.selected", :options="functionality.options" stacked).m-3
-
-              b-row(v-b-toggle.filter3)
-                b-col(cols="10")
-                  p.sideBar URBAN CYCLE WATER
-                b-col(cols="2")
-                  b-icon(icon="chevron-up" size="sm")
-
-              b-collapse(id="filter3" role="tabpanel")
-                b-form-checkbox-group(v-model="urbanWaterCycle.selected", :options="urbanWaterCycle.options" stacked).m-3
-
-              b-row(v-b-toggle.filter4)
-                b-col(cols="10")
-                  p.sideBar TOPIC
-                b-col(cols="2")
-                  b-icon(icon="chevron-up" size="sm")
-
-              b-collapse(id="filter4" role="tabpanel")
-                b-form-checkbox-group(v-model="topic.selected", :options="topic.options" stacked).m-3
     br
     div.my-grid
       b-card-group(v-for="app in filteredApps" :key="app.name" ).p-2
@@ -70,54 +44,63 @@
       return{
         appsInfo: [],
         search: "",
-        codeType: {
-          selected: [],
-          options: [
-          { text: 'Free, no licence', value: 'free' },
-          { text: 'Public/open source', value: 'open'},
-          { text: 'Closed source', value: 'closed'}
-          ]
-        },
-        functionality: {
-          selected: [],
-          options: [
-            { text: 'Planning', value: 'planning' },
-            { text: 'Design', value: 'design' },
-            { text: 'Selection', value: 'selection' },
-            { text: 'Operation', value: 'operation' },
-            { text: 'Maintenance', value: 'maintenance' },
-            { text: 'Optimization', value: 'optimization' },
-            { text: 'Control', value: 'control' },
-            { text: 'Management', value: 'management' },
-            { text: 'Decision support', value: 'decision support' }
-          ]
-        },
-        topic: {
-          selected: [],
-          options: [
-            { text: 'GHG', value: 'GHG' },
-            { text: 'Nitrates', value: 'nitrates' },
-            { text: 'Membranes', value: 'membranes' },
-            { text: 'NBS', value: 'NBS' },
-            { text: 'Odours', value: 'odours' },
-            { text: 'Corrosion', value: 'corrosion' },
-            { text: 'Aeration', value: 'aeration' },
-            { text: 'Cost', value: 'cost' },
-
-          ]
-        },
-        urbanWaterCycle: {
-          selected: [],
-          options: [
-            { text: 'Drinking water', value: 'drinking water' },
-            { text: 'Distribution', value: 'distribution' },
-            { text: 'Sewer', value: 'sewer' },
-            { text: 'Collection', value: 'collection' },
-            { text: 'Treatment', value: 'treatment' },
-            { text: 'Reuse', value: 'reuse' },
-            { text: 'River', value: 'river' },
-          ]
-        },
+        filters: [
+          {
+            name: "code type",
+            key: "codeType",
+            selected: [],
+            options: [
+              { text: 'Free, no licence', value: 'free' },
+              { text: 'Public/open source', value: 'open'},
+              { text: 'Closed source', value: 'closed'}
+              ]
+          },
+          {
+            name: "functionality",
+            key: "functionality",
+            selected: [],
+            options: [
+              { text: 'Planning', value: 'planning' },
+              { text: 'Design', value: 'design' },
+              { text: 'Selection', value: 'selection' },
+              { text: 'Operation', value: 'operation' },
+              { text: 'Maintenance', value: 'maintenance' },
+              { text: 'Optimization', value: 'optimization' },
+              { text: 'Control', value: 'control' },
+              { text: 'Management', value: 'management' },
+              { text: 'Decision support', value: 'decision support' }
+              ]
+          },
+          {
+            name: "topic",
+            key: "topic",
+            selected: [],
+            options: [
+              { text: 'GHG', value: 'GHG' },
+              { text: 'Nitrates', value: 'nitrates' },
+              { text: 'Membranes', value: 'membranes' },
+              { text: 'NBS', value: 'NBS' },
+              { text: 'Odours', value: 'odours' },
+              { text: 'Corrosion', value: 'corrosion' },
+              { text: 'Aeration', value: 'aeration' },
+              { text: 'Cost', value: 'cost' },
+            ]
+          },
+          {
+            name: "urban water cycle",
+            key: "urbanWaterCycle",
+            selected: [],
+            options: [
+              { text: 'Drinking water', value: 'drinking water' },
+              { text: 'Distribution', value: 'distribution' },
+              { text: 'Sewer', value: 'sewer' },
+              { text: 'Collection', value: 'collection' },
+              { text: 'Treatment', value: 'treatment' },
+              { text: 'Reuse', value: 'reuse' },
+              { text: 'River', value: 'river' },
+            ]
+          },
+        ]
       }
     },
     computed: {
@@ -131,13 +114,13 @@
           let descriptionLower = app.shortDescription.toLowerCase()
 
           let searchBox = nameLower.match(lowerSearch) || descriptionLower.match(lowerSearch)
-          let codeType = (_this.codeType.selected.length === 0) || (_this.codeType.selected.filter(x => app.filters.codeType.includes(x)).length > 0);
-          let functionality = (_this.functionality.selected.length === 0) || (_this.functionality.selected.filter(x => app.filters.functionality.includes(x)).length > 0);
-          let topic = (_this.topic.selected.length === 0) || (_this.topic.selected.filter(x => app.filters.topic.includes(x)).length > 0);
-          let urbanWaterCycle = (_this.urbanWaterCycle.selected.length === 0) || (_this.urbanWaterCycle.selected.filter(x => app.filters.urbanWaterCycle.includes(x)).length > 0);
 
-
-          return searchBox && codeType && functionality && topic && urbanWaterCycle
+          let filters = true
+          _this.filters.forEach(filter => {
+            let aux = (filter.selected.length === 0) || (filter.selected.filter(x => app.filters[filter.name].includes(x)).length > 0);
+            filters = filters && aux;
+          })
+          return searchBox && filters
         });
       },
     },

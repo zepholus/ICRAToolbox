@@ -1,8 +1,11 @@
 <template lang="pug">
   .appInfo
     div#title
-      b-row(align-v="center").text-left.px-3
-        h3.appTitle.p-3 {{ getAppTitle }}
+      b-row(align-v="center" align-h="between" style="height: 100px;").text-left.px-3
+        b-col(style="background-color: var(--dark-gray); height: 80px;" order="2").p-0
+          h3.appTitle.px-3.pt-4.text-right {{ getAppTitle }}
+        b-col(cols="auto" order="1")
+          b-img(:src="'./images/'+appInfo['imageName']" height="80px" style="background-color: white")
     b-container.pt-4.px-3#content
       template(v-if="this.appInfo['description']" )
         div#description
@@ -12,7 +15,7 @@
 
       template(v-if="this.appInfo['otherImages'].length > 0" )
         div#images()
-          b-carousel(interval="4000" indicators )
+          b-carousel(:interval="4000" indicators )
             template(v-for="img in this.appInfo['otherImages']" )
               b-carousel-slide()
                 template(v-slot:img)
@@ -57,7 +60,7 @@
           p
             | This is a
             |
-            strong.font-italic {{ this.appInfo.filters.codeType }}
+            strong.font-italic {{ this.appInfo.filters.codeType[0] }}
             |
             |  tool.
 
@@ -161,13 +164,10 @@
 <style scoped>
   .appInfo {
     color: var(--text-main-color);
-    //line-height: normal;
-    //display: block;
-    //margin-bottom: 1em;
   }
 
   #title {
-    background-color: var(--dark-gray);
+    //background-color: var(--dark-gray);
   }
 
   h3.appTitle{

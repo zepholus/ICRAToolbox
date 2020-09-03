@@ -10,7 +10,6 @@
       template(v-if="this.appInfo['description']" )
         div#description
           p(v-html="showContentHtml(this.appInfo['description'])")
-        //b-dropdown-divider.line
         br
 
       template(v-if="this.appInfo['otherImages'].length > 0" )
@@ -54,13 +53,25 @@
                       a.link(type="button" :href="'mailto:'+exp['email']+'?Subject=ICRA%20(apps%20and%20tools):%20'+getAppTitle" target="_blank" v-html="showContentHtml(exp['email'])").pl-2
         b-dropdown-divider.line
 
+      template(v-if="this.appInfo['credits'].length > 0" )
+        div#credits
+          h4.sectionTitle Credits
+          b-row(fluid)
+            template(v-for="cred in this.appInfo['credits']")
+              b-col(cols="4").pb-2
+                ul.components()(style="margin-bottom: 0")
+                  li
+                    h6(v-html="showContentHtml(cred['name'])" style="margin-bottom: 0.2rem; font-weight: bold;")
+                    p(v-html="showContentHtml(cred['position'])")
+        b-dropdown-divider.line
+
       template(v-if="this.appInfo['toolLink'] || this.appInfo['codeLink']" )
         div#links
           h4.sectionTitle Links & Downloads
           p
             | This is a
             |
-            strong.font-italic {{ this.appInfo.filters.codeType[0] }}
+            strong.font-italic {{ this.appInfo.filters['code type'][0] }}
             |
             |  tool.
 
@@ -97,7 +108,6 @@
     computed: {
       getAppTitle: function () {
         let _this = this;
-        //let appName = _this.$route.params.appName.replace(/(-)/g," " ); //replace all '-' from url with whitespaces
         _this.appInfo = _this.$store.getters.getCurrentApp;
         return _this.appInfo.name;
       }
@@ -105,13 +115,7 @@
     methods: {
       showContentHtml: function (content) {
         return content.replace(/\n/g, "<br />");
-      },
-      /*showPublicationsHtml: function (content) {
-        let c;
-        for(c in content){
-
-        }
-      }*/
+      }
     }
   }
 
@@ -164,6 +168,7 @@
 <style scoped>
   .appInfo {
     color: var(--text-main-color);
+    margin-top: 30px;
   }
 
   #title {

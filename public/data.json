@@ -57,14 +57,19 @@
           "name": "Raquel Garcia",
           "position": "Researcher",
           "email": "raquel.garcia@udg.edu"
-        },
-        {
-          "name": "Raquel Garcia",
-          "position": "Researcher",
-          "email": "raquel.garcia@udg.edu"
         }
       ],
-      "imageName": "remapp/remapp.jpg",
+      "credits": [
+        {
+          "name": "Joan Saló",
+          "position": "Tool developer"
+        },
+        {
+          "name": "Roser Brugués",
+          "position": "Tool developer"
+        }
+      ],
+      "imageName": "remapp/logo_mem.png",
       "otherImages": ["remapp/app_1.png", "remapp/app_2.png", "remapp/app_3.png", "remapp/remapp.jpg"],
       "toolLink": "http://remapp.icra.cat/",
       "codeLink": "https://github.com/icra/remapp",
@@ -97,11 +102,20 @@
           "name": "Raquel Garcia",
           "position": "Researcher",
           "email": "raquel.garcia@udg.edu"
+        }
+      ],
+      "credits": [
+        {
+          "name": "Adrià Riu",
+          "position": "Main developer"
         },
         {
-          "name": "Raquel Garcia",
-          "position": "Researcher",
-          "email": "raquel.garcia@udg.edu"
+          "name": "Joan Saló",
+          "position": "Developer"
+        },
+        {
+          "name": "Roser Brugués",
+          "position": "Developer"
         }
       ],
       "imageName": "edicitnet/edicitnet.jpg",

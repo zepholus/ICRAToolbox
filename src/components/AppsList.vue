@@ -144,22 +144,6 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-  .my-grid {
-    display: grid;
-    justify-items: center;
-    /* 280px is the minimum a column can get, you might need to adjust it based on your needs. */
-    grid-template-columns: 50% 50%;
-    /*grid-gap: 1.5rem;*/
-  }
-
-  .my-grid > * {
-    width: 100%;
-  }
-
-  .card-title {
-    font-weight: bold;
-  }
-
   .appsList {
     color: var(--text-main-color);
     line-height: normal;
@@ -172,7 +156,6 @@
   p.sideBar {
     font-weight: bold;
   }
-
 
   a.link, a.link[type=button] {
     color: var(--blue-icra);
@@ -207,6 +190,20 @@
 
   .buttonFilter:checked {
     background-color: var(--orange-icra);
+  }
+
+  .my-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 50% 50%;
+  }
+
+  .my-grid > * {
+    width: 100%;
+  }
+
+  .card-title {
+    font-weight: bold;
   }
 
 </style>

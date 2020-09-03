@@ -69,7 +69,7 @@
       "toolLink": "http://remapp.icra.cat/",
       "codeLink": "https://github.com/icra/remapp",
       "filters":  {
-        "code type": [],
+        "code type": ["open"],
         "functionality": [],
         "topic": [],
         "urban water cycle": []
@@ -105,16 +105,15 @@
         }
       ],
       "imageName": "edicitnet/edicitnet.jpg",
-      "otherImages": ["remapp/app_1.png", "remapp/app_2.png", "remapp/app_3.png", "remapp/remapp.jpg"],
-      "toolLink": "http://remapp.icra.cat/",
-      "codeLink": "https://github.com/icra/remapp",
+      "otherImages": ["edicitnet/app_1.png", "edicitnet/app_2.png", "edicitnet/app_3.png", "edicitnet/app_4.png"],
+      "toolLink": "http://toolbox.edicitnet.com/",
+      "codeLink": "http://git.h2793818.stratoserver.net:3333/adriariu/EdicityFront",
       "filters":  {
-        "code type": [],
+        "code type": ["free"],
         "functionality": [],
         "topic": [],
         "urban water cycle": []
       }
     }
-
   ]
 }

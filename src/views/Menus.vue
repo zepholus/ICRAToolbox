@@ -4,9 +4,8 @@
       b-col(cols="3" md="3" xl="3"  style="min-height: 100vh; position:sticky; top:0;").py-3
         b-navbar(toggleable='lg').p-0
           .sidebar-header
-            b-container(fluid title="back to ICRA homepage" style="width: 70%").pb-3.px-0.float-left
-              a(href="http://icra.cat/index.php?lang=3")
-                img(alt="ICRA logo" src="../assets/icra-logo-en.png").img-fluid
+            b-container(fluid title="home" style="width: 70%" @click="home").pb-3.px-0.float-left
+              img(alt="ICRA logo" src="../assets/icra-logo-en.png").img-fluid
             b-container(fluid)
               ul.list-unstyled.components()
                 li.menuTitle
@@ -64,9 +63,6 @@
           if(appName === name)
             className = "active"
         return className;
-      },
-      computed: {
-
       }
     }
   }

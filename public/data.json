@@ -69,101 +69,52 @@
       "toolLink": "http://remapp.icra.cat/",
       "codeLink": "https://github.com/icra/remapp",
       "filters":  {
-        "codeType": "free"
+        "codeType": ["free", "open"],
+        "functionality": [],
+        "topic": [],
+        "urbanWaterCycle": []
       }
     },
     {
       "name":"EdiCitNet Toolbox",
       "shortDescription":"Knowledge sharing & networks for Edible City Solutions (ECS)",
-      "description": "",
-      "project": "",
+      "description": "REMapp is a simple decision-making tool for end-of-life spiral-wound reverse osmosis and nanofiltration membranes with the specific size of 40 inches of length and 8 inches of diameter.<br/>REMapp is useful for membrane users who are going to replace membranes and are seeking alternative end-of-life membrane managements.\n\nThe preferable order regarding the potential kind of end-of-life membrane managements is: reuse, regeneration for reuse, direct recycling, indirect recycling, incineration and landfill disposal. Worldwide the most common management is incineration and landfill disposal (by far). REMapp shows current investigations and companies that try to boost alternative end-of-life membrane managements to those two last.\n\nThis decision-making tree has been developed by LEQUIA research group of University of Girona in collaboration with the University of New South Wales.",
+      "project": "The authors acknowledge the financial support of the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement nº 712949 (TECNIOspring PLUS) and to the Agency for Business Competitiveness of the Government of Catalonia for the grant TECSPR17-1-0019 Mem2.0 project.",
       "publications": [
-
+        {
+          "authors": "Cornelissen E.R., Siegers, W.G., Ogier, J., Beerendonk, E.F.",
+          "title": "Influence of calcium-NOM complexes on fouling of nanofiltration membranes in drinking water production",
+          "link": "https://iwaponline.com/ws/00604/ws006040171.htm"
+        },
+        {
+          "authors": "Cornelissen E.R., Siegers, W.G., Ogier, J., Beerendonk, E.F.",
+          "title": "Influence of calcium-NOM complexes on fouling of nanofiltration membranes in drinking water production",
+          "link": "https://iwaponline.com/ws/00604/ws006040171.htm"
+        }
       ],
       "experts": [
-
+        {
+          "name": "Raquel Garcia",
+          "position": "Researcher",
+          "email": "raquel.garcia@udg.edu"
+        },
+        {
+          "name": "Raquel Garcia",
+          "position": "Researcher",
+          "email": "raquel.garcia@udg.edu"
+        }
       ],
       "imageName": "edicitnet/edicitnet.jpg",
-      "otherImages": [],
-      "toolLink": "",
-      "codeLink": "",
-      "filters":  {
-        "codeType": "open"
-      }
-    },
-    {
-      "name":"Clean-Tour",
-      "shortDescription":"Knowledge sharing & networks for Edible City Solutions (ECS).",
-      "description": "REMapp is a simple decision-making tool for end-of-life spiral-wound reverse osmosis and nanofiltration membranes with the specific size of 40 inches of length and 8 inches of diameter.<br/>REMapp is useful for membrane users who are going to replace membranes and are seeking alternative end-of-life membrane managements.\n\nThe preferable order regarding the potential kind of end-of-life membrane managements is: reuse, regeneration for reuse, direct recycling, indirect recycling, incineration and landfill disposal. Worldwide the most common management is incineration and landfill disposal (by far). REMapp shows current investigations and companies that try to boost alternative end-of-life membrane managements to those two last.\n\nThis decision-making tree has been developed by LEQUIA research group of University of Girona in collaboration with the University of New South Wales.",
-      "project": "The authors acknowledge the financial support of the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement nº 712949 (TECNIOspring PLUS) and to the Agency for Business Competitiveness of the Government of Catalonia for the grant TECSPR17-1-0019 Mem2.0 project.",
-      "publications": [
-        {
-          "authors": "Cornelissen E.R., Siegers, W.G., Ogier, J., Beerendonk, E.F.",
-          "title": "Influence of calcium-NOM complexes on fouling of nanofiltration membranes in drinking water production",
-          "link": "https://iwaponline.com/ws/00604/ws006040171.htm"
-        },
-        {
-          "authors": "Cornelissen E.R., Siegers, W.G., Ogier, J., Beerendonk, E.F.",
-          "title": "Influence of calcium-NOM complexes on fouling of nanofiltration membranes in drinking water production",
-          "link": "https://iwaponline.com/ws/00604/ws006040171.htm"
-        }
-      ],
-      "experts": [
-        {
-          "name": "Raquel Garcia",
-          "position": "Researcher",
-          "email": "raquel.garcia@udg.edu"
-        },
-        {
-          "name": "Raquel Garcia",
-          "position": "Researcher",
-          "email": "raquel.garcia@udg.edu"
-        }
-      ],
-      "imageName": "remapp/remapp.jpg",
-      "otherImages": [],
+      "otherImages": ["remapp/app_1.png", "remapp/app_2.png", "remapp/app_3.png", "remapp/remapp.jpg"],
       "toolLink": "http://remapp.icra.cat/",
       "codeLink": "https://github.com/icra/remapp",
       "filters":  {
-        "codeType": "free"
-      }
-    },
-    {
-      "name":"EcoAdvisor",
-      "shortDescription":"knowledge sharing & networks for Edible City Solutions (ECS).",
-      "description": "REMapp is a simple decision-making tool for end-of-life spiral-wound reverse osmosis and nanofiltration membranes with the specific size of 40 inches of length and 8 inches of diameter.<br/>REMapp is useful for membrane users who are going to replace membranes and are seeking alternative end-of-life membrane managements.\n\nThe preferable order regarding the potential kind of end-of-life membrane managements is: reuse, regeneration for reuse, direct recycling, indirect recycling, incineration and landfill disposal. Worldwide the most common management is incineration and landfill disposal (by far). REMapp shows current investigations and companies that try to boost alternative end-of-life membrane managements to those two last.\n\nThis decision-making tree has been developed by LEQUIA research group of University of Girona in collaboration with the University of New South Wales.",
-      "project": "The authors acknowledge the financial support of the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement nº 712949 (TECNIOspring PLUS) and to the Agency for Business Competitiveness of the Government of Catalonia for the grant TECSPR17-1-0019 Mem2.0 project.",
-      "publications": [
-        {
-          "authors": "Cornelissen E.R., Siegers, W.G., Ogier, J., Beerendonk, E.F.",
-          "title": "Influence of calcium-NOM complexes on fouling of nanofiltration membranes in drinking water production",
-          "link": "https://iwaponline.com/ws/00604/ws006040171.htm"
-        },
-        {
-          "authors": "Cornelissen E.R., Siegers, W.G., Ogier, J., Beerendonk, E.F.",
-          "title": "Influence of calcium-NOM complexes on fouling of nanofiltration membranes in drinking water production",
-          "link": "https://iwaponline.com/ws/00604/ws006040171.htm"
-        }
-      ],
-      "experts": [
-        {
-          "name": "Raquel Garcia",
-          "position": "Researcher",
-          "email": "raquel.garcia@udg.edu"
-        },
-        {
-          "name": "Raquel Garcia",
-          "position": "Researcher",
-          "email": "raquel.garcia@udg.edu"
-        }
-      ],
-      "imageName": "remapp/remapp.jpg",
-      "otherImages": [],
-      "toolLink": "http://remapp.icra.cat/",
-      "codeLink": "https://github.com/icra/remapp",
-      "filters":  {
-        "codeType": "free"
+        "codeType": ["free"],
+        "functionality": [],
+        "topic": [],
+        "urbanWaterCycle": []
       }
     }
+
   ]
 }

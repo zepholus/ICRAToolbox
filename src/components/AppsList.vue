@@ -17,17 +17,34 @@
                   b-icon(icon="chevron-up" size="sm")
 
               b-collapse(id="filter1" role="tabpanel")
-                b-form-radio-group(v-model="codeType.selected", :options="codeType.options" stacked).m-3
+                b-form-checkbox-group(v-model="codeType.selected", :options="codeType.options" stacked).m-3
 
               b-row(v-b-toggle.filter2)
                 b-col(cols="10")
-                  p.sideBar CODE TYPE 2
+                  p.sideBar FUNCTIONALITY
                 b-col(cols="2")
                   b-icon(icon="chevron-up" size="sm")
 
               b-collapse(id="filter2" role="tabpanel")
-                b-form-radio-group(v-model="codeType.selected", :options="codeType.options" stacked).m-2
+                b-form-checkbox-group(v-model="functionality.selected", :options="functionality.options" stacked).m-3
 
+              b-row(v-b-toggle.filter3)
+                b-col(cols="10")
+                  p.sideBar URBAN CYCLE WATER
+                b-col(cols="2")
+                  b-icon(icon="chevron-up" size="sm")
+
+              b-collapse(id="filter3" role="tabpanel")
+                b-form-checkbox-group(v-model="urbanWaterCycle.selected", :options="urbanWaterCycle.options" stacked).m-3
+
+              b-row(v-b-toggle.filter4)
+                b-col(cols="10")
+                  p.sideBar TOPIC
+                b-col(cols="2")
+                  b-icon(icon="chevron-up" size="sm")
+
+              b-collapse(id="filter4" role="tabpanel")
+                b-form-checkbox-group(v-model="topic.selected", :options="topic.options" stacked).m-3
     br
     div.my-grid
       b-card-group(v-for="app in filteredApps" :key="app.name" ).p-2
@@ -54,15 +71,53 @@
         appsInfo: [],
         search: "",
         codeType: {
-          selected: 'any',
+          selected: [],
           options: [
-          { text: '-Any-', value: 'any' },
           { text: 'Free, no licence', value: 'free' },
           { text: 'Public/open source', value: 'open'},
           { text: 'Closed source', value: 'closed'}
-        ]
-      }
+          ]
+        },
+        functionality: {
+          selected: [],
+          options: [
+            { text: 'Planning', value: 'planning' },
+            { text: 'Design', value: 'design' },
+            { text: 'Selection', value: 'selection' },
+            { text: 'Operation', value: 'operation' },
+            { text: 'Maintenance', value: 'maintenance' },
+            { text: 'Optimization', value: 'optimization' },
+            { text: 'Control', value: 'control' },
+            { text: 'Management', value: 'management' },
+            { text: 'Decision support', value: 'decision support' }
+          ]
+        },
+        topic: {
+          selected: [],
+          options: [
+            { text: 'GHG', value: 'GHG' },
+            { text: 'Nitrates', value: 'nitrates' },
+            { text: 'Membranes', value: 'membranes' },
+            { text: 'NBS', value: 'NBS' },
+            { text: 'Odours', value: 'odours' },
+            { text: 'Corrosion', value: 'corrosion' },
+            { text: 'Aeration', value: 'aeration' },
+            { text: 'Cost', value: 'cost' },
 
+          ]
+        },
+        urbanWaterCycle: {
+          selected: [],
+          options: [
+            { text: 'Drinking water', value: 'drinking water' },
+            { text: 'Distribution', value: 'distribution' },
+            { text: 'Sewer', value: 'sewer' },
+            { text: 'Collection', value: 'collection' },
+            { text: 'Treatment', value: 'treatment' },
+            { text: 'Reuse', value: 'reuse' },
+            { text: 'River', value: 'river' },
+          ]
+        },
       }
     },
     computed: {
@@ -76,10 +131,13 @@
           let descriptionLower = app.shortDescription.toLowerCase()
 
           let searchBox = nameLower.match(lowerSearch) || descriptionLower.match(lowerSearch)
-          let codeType = (_this.codeType.selected === 'any') || (app.filters.codeType === _this.codeType.selected)
+          let codeType = (_this.codeType.selected.length === 0) || (_this.codeType.selected.filter(x => app.filters.codeType.includes(x)).length > 0);
+          let functionality = (_this.functionality.selected.length === 0) || (_this.functionality.selected.filter(x => app.filters.functionality.includes(x)).length > 0);
+          let topic = (_this.topic.selected.length === 0) || (_this.topic.selected.filter(x => app.filters.topic.includes(x)).length > 0);
+          let urbanWaterCycle = (_this.urbanWaterCycle.selected.length === 0) || (_this.urbanWaterCycle.selected.filter(x => app.filters.urbanWaterCycle.includes(x)).length > 0);
 
-          return searchBox && codeType
 
+          return searchBox && codeType && functionality && topic && urbanWaterCycle
         });
       },
     },
